@@ -1,0 +1,36 @@
+*{
+    padding: 0%;
+    margin: 0;
+    color: red;
+    text-align: center;
+}
+
+html, body{
+    background-color: aliceblue;
+}
+
+.main-container{
+    border: 7px solid #FF88AA;
+    border-radius: 50px;
+    margin: 2rem;
+    background-color: rgb(384,387,145);
+}
+
+nav, section, footer, aside, article{
+    border: 4px solid rgb(123, 343, 986);
+    margin: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
+text-align: justify;
+}
+
+article, aside{
+    width: 40%;
+    display: inline-block;
+    height: 300px;
+
+}
+
+nav, footer, section{
+    background-color: lightseagreen;
+}

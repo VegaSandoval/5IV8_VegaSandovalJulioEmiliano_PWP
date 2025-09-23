@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body{
+    background-image: url(../image/fondo.jpg);
+    background-size: cover;
+    color: lightyellow;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+
+    
+}
+
+.userlogin{
+    background-color: red;
+    width: 600px;
+    height: 40px;
+    border-radius: 10px solid rgb(423,567,234);
+    margin-top: 10%;
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding-top: 5px;
+    color: brown;
+}
+
+.userid{
+    padding-top: 20px;
+}
+
+.userid h2{
+    font-family: 'Roboto';
+    float: left;
+    margin-left: 50px;
+    margin-right: 5px;
+    padding-left: 5px;
+}
