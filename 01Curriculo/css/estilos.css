@@ -11,3 +11,9 @@ header{
     padding: 20px;
     background-color: #ffebd1;
 }
+
+header h1{
+    margin: 10px 0;
+    color: black;
+}
+
