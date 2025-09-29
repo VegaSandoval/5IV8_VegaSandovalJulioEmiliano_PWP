@@ -14,7 +14,7 @@ header{
 
 header h1{
     margin: 10px 0;
-    color: black;
+    color: #9a7b67;
 }
 
 nav ul{
@@ -73,6 +73,6 @@ footer{
     background-color: #9a7b67;
     text-align: center;
     padding: 15px;
-    color: #ffebd1;
+    color: #ffffff;
     margin-top: 20px;
 }
