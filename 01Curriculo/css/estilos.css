@@ -38,3 +38,8 @@ nav ul li a{
     text-decoration: none;
     font-weight: 5px;
 }
+
+main{
+    width: 80%;
+    margin: auto;
+}
