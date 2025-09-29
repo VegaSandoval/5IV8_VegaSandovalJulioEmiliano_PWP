@@ -68,3 +68,11 @@ justify-content: space-between;
 align-items: center;
 gap: 20px;
 }
+
+footer{
+    background-color: #9a7b67;
+    text-align: center;
+    padding: 15px;
+    color: #ffebd1;
+    margin-top: 20px;
+}
