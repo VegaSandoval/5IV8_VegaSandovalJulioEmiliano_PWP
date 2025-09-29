@@ -19,9 +19,22 @@ header h1{
 
 nav ul{
     list-style: none;
-    padding: 0%;
-    display: flex;
-    flex-wrap: wrap;
+    padding: 1%;
+    display:flex;
+    flex-wrap:wrap;
     gap: 10px;
-    
+    background-color: #9a7b67;
+    text-align: center;
+}
+
+nav ul li{
+    background-color: #bc8e72;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: 5px;
 }
