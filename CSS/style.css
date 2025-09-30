@@ -47,3 +47,13 @@ td{
     padding: 10px;
     text-align: center;
 }
+
+tr:nth-child(even) td{
+    background-color: #ffebcd;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
