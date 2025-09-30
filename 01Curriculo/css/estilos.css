@@ -71,6 +71,11 @@ main{
     margin: 20px 0;
 }
 
+.seccion_columnas .seccion {
+    flex: 1; 
+    min-width: 0; 
+}
+
 .seccion_ancha{
     background-color: #9a7b67;
     padding: 15px;
