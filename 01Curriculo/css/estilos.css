@@ -32,6 +32,11 @@ nav ul li{
     background-color: #bc8e72;
     padding: 8px 15px;
     border-radius: 5px;
+    transition: background 0.3;
+}
+
+nav ul li:hover{
+    background-color: #8b6d56;
 }
 
 nav ul li a{
