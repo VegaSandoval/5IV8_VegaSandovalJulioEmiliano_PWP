@@ -2,47 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de formulario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>EJEMPLO DE FORMULARIO</title>
+    <script src="./js/validacion.js"></script>
+    <link rel="stylesheet" href="formulario css/styleformulario.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Roboto:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <p>Todos los formulario en la web,
-        manejan metodos para el envío de la diferentes peticiones que realiza el usuario
-        considerando la arqutectua cliente servidor,
-        el manejo de las peticiones se hace por medio del protocolo http,
-        y actualmente por https, cada peticion debe ser atendida en un tiepo de respuesta conforme al modelo
-        TCP/IP, los metodos princioale sde los formulario, son:
+    <div class="introduccion">
+        <header>Formulario</header>
+    
+    <p>Todos los formularios en la web, manejan metodos para el envio de las diferente peticiones que realiza el usuario. Considerando la arquitectura cliente-servidor, el manejo de las peticiones se hacen por medio del protocolo http y actualmente por https, cada peticion debe ser atendida en tiempo de respuesta conforme al modelo TCP/IP. Los metodos principales de los formularios son:</p>
+    <ul>
+        <li> <strong>GET:</strong> Este metodo se encarga de enviar la informacion del formulario por medio de la salida estandar (conocido como url), del navegador, esto 
+            propicia que puedan existir inyecciones de codigo realizando violaciones a la seguridad del sistema.</li>
 
-        <li>
-            <ol>Get: <h1>
-                Este metodo se encarga de enciar la informacin del formulario por medio
-                de la salida estandar (conocida como url), del navegador, esto propicia que pueda 
-                existir inyecciones del codigo realizando violaciones a la seguridad del sistema.
-            </h1></ol>
+    <li><strong>Post: </strong> Este metodo se encarga de enviar la información para poder registrar un cambio o un nuevo registro dentro del sistema enviandola igual 
+        por el método estandar pero mediante un ocultamiento, esto significa que no es visible para el usuario. Lo que nos ofrece un mayor grado de 
+        seguridad en el manejo de la información</li>
 
-            <ol>POST: <h1>
-                Este metodo se encarga de enviar la informacion oara poder resgitsrar un cambio 
-                o un nuevo registro dentro del sistemas, enviandolaigual por el metodo estanda; 
-                pero mediante un ocultamineto, esto significa que no es visible para el ususri, 
-                Lo que nos ofrece un mayor gardo de suguridad en el manejo de la inofrmacion.
-            </h1></ol>
-        </li>
-    </p>
+    </ul>
     <br>
-    <p>
-        En resumen los metodos son:
-        <li>
-            <ul>Get: sirve para enviar y realizar operacines de lectura o consulta</ul>
-            <ul>Post: sirve para </ul>
-            <ul>Delete: sirve para eliminar un recurso especificp dentro del servido obteniendo una respuesta de actualizacion</ul>
-            <ul>Pit: Sirve para almancernar la informacion de un recurso particular y conectarse al servido rpara realizar la actializacion</ul>
-            <ul>Head: Sirve para regresar el codigp de pueta de cualquier cabecera HTTP asociada a un recurso</ul>
-        </li>
-    </p>
-
+    <p>En resumen los métodos son:</p>  
+        <ul>
+            <li> <strong>Get:</strong>  sirve para enviar y realizar operaciones de lectura o consulta</li>
+            <li> <strong>Post: </strong> Sirve para enviar información de un recurso al servidor con el fin de registrarlos</li>
+            <li> <strong>Delete:</strong>  Sirve para eliminar un recusro especifico dentro del servidor, obteniendo una respuesta de actualización</li>
+            <li> <strong>Put: </strong> Sirve para almacenar la información de un recurso particular y conectarse al servicio para realizar la actualización</li>
+            <li> <strong>Head:</strong>  Sirve para regresar el codigo de puesta de cualquier cabecera HTTP asociada a un recurso</li>
+        </ul>
+    
+    </div>
     <div class="container-form">
-        <form method="get" action="">
-            
+        <form method="post" id="formulario" onsubmit="return validar(this)" name="formulario" action="about:blank"> 
+            <label for="nombre">Nombre: </label>
+            <br>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa aqui tu nombre" required>
+            <br>
+            <label for="edad">Edad: </label>
+            <br>
+            <input type="number" id="edad" name="edad" placeholder="Ingresa aqui tu edad" required>
+            <br>
+            <label for="email">Email: </label>
+            <br>
+            <input type="email" id="correo" name="correo" placeholder="Ingresa aqui tu Correo" required>
+            <br>
+
+            <input type="submit" name="enviar" value="Enviar registro"><br>
+            <input type="reset" name="borrar" value="Borrar datos">
         </form>
     </div>
 </body>

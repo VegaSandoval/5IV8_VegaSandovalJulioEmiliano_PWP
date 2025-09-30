@@ -99,7 +99,7 @@ footer{
     padding: 5px;
     position: absolute;
     z-index: 1;
-    bottom: 125%; /* aparece arriba de la imagen */
+    bottom: 125%; 
     left: 50%;
     margin-left: -70px;
     opacity: 0;
