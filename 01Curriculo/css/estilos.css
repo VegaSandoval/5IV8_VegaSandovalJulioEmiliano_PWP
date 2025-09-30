@@ -86,9 +86,26 @@ main{
 
 .seccion_logos {
 display: flex;
-justify-content: space-between;
-align-items: center;
 gap: 20px;
+margin: 20px 0;
+}
+
+.seccion_logos > .seccion {
+    flex: 1;        
+    min-width: 0;
+}
+
+.seccion_logos > .logos {
+    flex: 1;         
+    display: flex;  
+    gap: 10px;       
+    flex-wrap: nowrap;
+    justify-content: center; 
+}
+
+.seccion_logos .logos img {
+    width: 200px;  
+    height: auto;
 }
 
 footer{
