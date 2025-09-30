@@ -61,3 +61,11 @@ a{
 a:hover{
     color: #ff5722;
 }
+
+footer{
+    background-color: #ff8a8a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
