@@ -2,7 +2,7 @@ body{
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #ffebd1;
-    color: #ffebd1;
+    color: #9a7b67;
 
 }
 
@@ -19,12 +19,13 @@ header h1{
 
 nav ul{
     list-style: none;
-    padding: 1%;
+    margin: 0;
+    padding: 10px;
     display:flex;
+    justify-content: center;
     flex-wrap:wrap;
-    gap: 10px;
+    gap: 20px;
     background-color: #9a7b67;
-    text-align: center;
 }
 
 nav ul li{
@@ -81,3 +82,4 @@ img {
   width: 150px;  
   height: auto;   
 }
+
