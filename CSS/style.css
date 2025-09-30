@@ -24,8 +24,8 @@ header{
 }
 
 .contenedor-tabla{
-    background-color: #ffbb91;
-    width: 100%;
+    background-color: #ffb380;
+    width: 80%;   
     margin: 0 auto;
     border-radius: 20px;
     padding: 20px;
@@ -74,4 +74,38 @@ footer{
     border-top: 4px dotted white;
     margin: 15px auto;
     width: 70%;
+}
+
+.miniatura {
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 140px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* aparece arriba de la imagen */
+    left: 50%;
+    margin-left: -70px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
