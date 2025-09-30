@@ -5,3 +5,14 @@ body{
     color: black;
     text-align: center;
 }
+
+header{
+    background-color: #ff8a8a;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 30px;
+    margin: 20px auto 5px;
+    width: 70%;
+}
