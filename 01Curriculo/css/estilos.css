@@ -69,11 +69,14 @@ main{
     display: flex;
     gap: 20px;
     margin: 20px 0;
-    flex: 1;
 }
 
 .seccion_ancha{
-    width: 100%;
+    background-color: #8b6d56;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+    color: white;
 }
 
 .seccion_logos {
