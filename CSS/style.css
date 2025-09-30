@@ -30,3 +30,20 @@ header{
     border-radius: 20px;
     padding: 20px;
 }
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #ffd699;
+    padding: 10px;
+    font-size: 16px;
+}
+
+td{
+    background-color: #fff4e3;
+    padding: 10px;
+    text-align: center;
+}
