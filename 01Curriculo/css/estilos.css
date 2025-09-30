@@ -42,7 +42,7 @@ nav ul li:hover{
 nav ul li a{
     color: white;
     text-decoration: none;
-    font-weight: 5px;
+    font-weight: bold;
 }
 
 main{
@@ -55,6 +55,14 @@ main{
     padding: 15px;
     margin: 20px 0;
     border-radius: 8px;
+    color: white;
+}
+
+.seccion h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
 }
 
 .seccion_columnas{
