@@ -3,52 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 1</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" >
         <form method="post" name="formulario" action="">
-            <label for=""> Formulario parea calculo de inversiones Banco Kawaii con un incremento del 8.05% anual
-                <br>
-                <div class="container-tabla">
-                    <table class="tabla">
-                        <tr>
-                            <td>
-                                Introduce la cantidad que quieras invertir por todo un año
-                            </td>
-                            <td>
-                                <input type="text" name="cantidad" id="cantidad" onkeypress="return validarn(event)">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-
-                            </td>
-                            <td>
-                                <input type="button" value="Calcular Interes" name="enviar" onclick="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Su saldo total con el interes es de:
-                            </td>
-                            <td>
-                                <input type="text" name="suledoi" id="saldoi" readonly="readonly" class="input_text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <input type="text" value="Borrar Datos" name="borrar" onclick="">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-            </label>
+            <label for=""> Formulario para calculo de inversiones Banco Kawaii con un incremento del 8.05% anual</label>
+            <br>
+            <div class="container-table" >
+                <table class="table" >
+                    <tr>
+                        <td>
+                            Introduce la cantidad que deseas invertir por todo 1 año: 
+                        </td>
+                        <td>
+                            <input type="text" name="cantidad" id="cantidadi" onkeypress="return validarn(event)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" value="Calcular Interes" name="enviar" onclick="interes()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Su saldo total con el interes es de: 
+                        </td>
+                        <td>
+                            <input type="text" name="sueldoi" id="saldoi" readonly="readonly" class="input_text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" value="Borrar Datos" name="borrar" onclick="borrari()">
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </form>
     </div>
-    
+ <script src="./js/funcionese1.js" ></script>   
 </body>
 </html>

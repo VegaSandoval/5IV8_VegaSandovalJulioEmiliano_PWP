@@ -1,96 +1,85 @@
 /*
-en  javascript
 Javascript es un lenguaje multiparadigma
-Acepta la programación funcional, estructurada, POO, Eventos
+Acepta la programacipon funcional, estructurada, POO, Eventos
+Dentro de JS, no existe el typado de variables
+int, string, float, etc
 
-Dentro de Js, no existe el typado de variables; int, string, etc
-Solo existen 3 tipos de varibles de acuerdo al estandar ES6: let, const y var
+Solo existen 3 tipos de variables dea cuerdo al estandar ES6
+VAR, LET, CONST
 */
 
-function validar (formulario) {
-//Validar que el campo no acepte menos de 3 caracteres
-//if (formulario.nombre.value.length < 3 ) {
-  //  alert("Por favor escribe más de 3 caracteres en el campo nombre");
-    //formulario.nombre.focus();
-    //return false;
-//}
-// Validación letras
-// var checkStr = formulario.nombre.value;
-// var abcOK = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ" + "abcdefghijklmnñopqrstuvwxyz";
-// var allvalido = true;
+function validar(formulario){
+    //quiero validar que el campo nombre acepte mas de 3 caracteres
+    if(formulario.nombre.value.length < 4){
+        alert("Por favor escribe mas de 3 caracteres en campo nombre");
+        formulario.nombre.focus();
+        return false;
+    }
 
-var checkStr = /^[A-Za-zÑñÁÉÍÓÚáéíóú\s]{3,}$/;
-if(!checkStr.test(formulario.nombre.value)){
-    alert("Ingrese un nombre válido solo con letras");
-    formulario.nombre.focus();
-    return false;
-}
+    //validación para unicamente letras
+    var checkStr = formulario.nombre.value;
+    alert(checkStr);
 
-// Comparar cadena de nombre con el resultado de abc
-//for (var i = 0; i < checkStr.length; i++) {
-  //  var caracteres = checkStr.charAt(i);
-    //var letraValida = false;
-    //for (var j = 0; j < abcOK.length; j++) {
-      //  if (caracteres == abcOK.charAt(j)) {
-        //    letraValida = true;
-          //  break;
-        //}
-   // }
-    //if (!letraValida) {
-      //  allvalido = false;
-       // break;
-    //}
-//}
-//if (allvalido == false) {
-  //  alert("Ingresar un nombre válido");
-    //formulario.nombre.focus();
-    //return false;
-//}
+    var abcOk = "QWERTYUIOPASDFGHJKLÑZXCVBNM"+"qwertyuiopasdfghjklñzxcvbnm";
 
-// Validación solo números
-/*var checkStr = formulario.edad.value;
-var numOK = "1234567890";
-var allvalido = true;
+    var allValido = true;
 
-// Comparar cadena de número con el numOK
-for (var i = 0; i < checkStr.length; i++) {
-    var caracteres = checkStr.charAt(i);
-    var numeroValido = false;
-    for (var j = 0; j < numOK.length; j++) {
-        if (caracteres == numOK.charAt(j)) {
-            numeroValido = true;
+    //tenemos que camparar la cadena de nombre vs abc
+    for(var i = 0; i < checkStr.length; i++){
+        var caracteres = checkStr.charAt(i);
+        for(var j = 0; j < abcOk.length; j++){
+            if(caracteres == abcOk.charAt(j)){
+                break;
+            }
+        }
+        if(j == abcOk.length){
+            allValido = false;
             break;
         }
     }
-    if (!numeroValido) {
-        allvalido = false;
-        break;
+    if(!allValido){
+        alert("Escriba unicamente letras en el campo nombre");
+        formulario.nombre.focus();
+        return false;
     }
+
+
+    //validación para unicamente letras
+    var checkStr = formulario.edad.value;
+    alert(checkStr);
+
+    var abcOk = "1234567890";
+
+    var allValido = true;
+
+    //tenemos que camparar la cadena de nombre vs abc
+    for(var i = 0; i < checkStr.length; i++){
+        var caracteres = checkStr.charAt(i);
+        for(var j = 0; j < abcOk.length; j++){
+            if(caracteres == abcOk.charAt(j)){
+                break;
+            }
+        }
+        if(j == abcOk.length){
+            allValido = false;
+            break;
+        }
+    }
+    if(!allValido){
+        alert("Escriba unicamente digitos en el campo nombre");
+        formulario.edad.focus();
+        return false;
+    }
+
+    //vamos a crear una funcion de una expresion regular para validar el correo electronico
+    //texto.texto@texto.texto
+
+    var b = /^[^@\s]+[^@\.\s]+(\.[^@\.\s]+)+$/;
+
+    var txt = formulario.correo.value;
+
+    alert("Email " + (b.test(txt)? " ": " no ")+ "valido");
+
+    return b.test;
+
 }
-if (!allvalido) {
-    alert("Ingrese únicamente números");
-    formulario.edad.focus();
-    return false;
-}*/
-
-if(!/^\d+$/.test(formulario.edad.value)){
-    alert("Ingrese únicamente números");
-    formulario.edad.focus();
-    return false;
-}
-
-//Validación correo electrónico
-var correo = formulario.correo.value;
-var regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-if (!regexCorreo.test(correo)) {
-    alert("Ingrese un correo electrónico válido");
-    formulario.correo.focus();
-    return false;
-}
-
-} 
-
-
-//Validar correo electrónico que acepte formato texto@texto.texto
-//texto.texto@texto.texto 
-//texto.texto@texto.texto 
