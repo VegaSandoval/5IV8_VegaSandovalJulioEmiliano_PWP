@@ -79,6 +79,32 @@ function intercambiarPosicionesRompe(filaPos1, columnaPos1, filaPos2, columaPos2
     rompe[filaPos2, columaPos2] = pos1;
 }
 
+function actualizarPosicionVacia(nuevaFila, nuevaColumna){
+    filaVacia = nuevaFila;
+    columnaVacia = nuevaColumna;
+}
+
+//Necesitamos tambien limitar klas possiones del romécabezas
+function posicionValida(fila, columna){
+    return (fila >= 0 && fila <= 2 && columna >= 0 && columna <= 2);
+}
+
+//debemos crear una funcion que se encargue de mover las piezas del rompecabezas detectando el evento de las flechas de navegacion.
+//debemos crear una matriz de identificacion de mov,
+//arriba 38, abajo 40, izquierda 37, derecha 39
+
+var codigoDireccion = {
+    IZQUIERDA: 37,
+    ARRIBA: 38,
+    DERECHA: 39,
+    ABAJO: 40
+}; //Esto es formato JSON
+
+function moverEnDireccion(direccion){
+    var nuevaFilaPiezaVacia;
+    var nuevaColumnaPiezaVacia;
+}
+
 function iniciar(){
     //mezclar las piezas
     //mezclarPiezas
