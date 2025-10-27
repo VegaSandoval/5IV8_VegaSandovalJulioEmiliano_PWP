@@ -101,34 +101,24 @@ var codigosDireccion = {
     ABAJO : 40
 };  //ES FORMATO JSON
 
-function moverEnDireccion(direccion){
-    var nuevaFilaPiezaVacia;
-    var nuevaColumnaPiezaVacia;
+function moverEnDireccion(direccion) {
+  var nuevaFilaPiezaVacia = filaVacia;
+  var nuevaColumnaPiezaVacia = columnaVacia;
 
-    //si se mueve
-    if(direccion === codigosDireccion.ABAJO){
-        nuevaFilaPiezaVacia = filaVacia + 1;
-        nuevaColumnaPiezaVacia = columnaVacia;
-    } else if(direccion === codigosDireccion.ARRIBA){
-        nuevaFilaPiezaVacia = filaVacia - 1;
-        nuevaColumnaPiezaVacia = columnaVacia;
-    } else if(direccion === codigosDireccion.DERECHA){
-        nuevaFilaPiezaVacia = filaVacia;
-        nuevaColumnaPiezaVacia = columnaVacia + 1;
-    } else if(direccion === codigosDireccion.IZQUIERDA){
-        nuevaFilaPiezaVacia = filaVacia;
-        nuevaColumnaPiezaVacia = columnaVacia - 1;
-    }   
+  if (direccion === codigosDireccion.ABAJO) nuevaFilaPiezaVacia++;
+  else if (direccion === codigosDireccion.ARRIBA) nuevaFilaPiezaVacia--;
+  else if (direccion === codigosDireccion.DERECHA) nuevaColumnaPiezaVacia++;
+  else if (direccion === codigosDireccion.IZQUIERDA) nuevaColumnaPiezaVacia--;
 
-    //solo mando a llamar a que la posicion sea valida
-    if(posicionValida(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia)){
-        //tengo que hacer una funcion que se encargue de intercambiar las posiciones
-        intercambiarPosiciones(filaVacia, columnaVacia, nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
-        actualizarPosicionVacia(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
-        //tengo que guardar el ultimo movimiento
-        agregarUltimoMovimiento(direccion);
+  if (posicionValida(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia)) {
+    intercambiarPosiciones(filaVacia, columnaVacia, nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
+    actualizarPosicionVacia(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
+    actualizarUltimoMovimiento(direccion);
+
+    if (checarSiGano()) {
+      setTimeout(mostrarCartelGanador, 200);
     }
-
+  }
 }
 
 function intercambiarPosiciones(fila1, columna1, fila2, columa2){
