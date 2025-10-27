@@ -205,7 +205,7 @@ function iniciar(){
     //mezclarPiezas
 }
 
-iniciar();
 
 //mandamos traer a la funcion
 mostrarInstrucciones(instrucciones);
+iniciar();
