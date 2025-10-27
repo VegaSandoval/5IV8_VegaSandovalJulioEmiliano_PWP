@@ -130,20 +130,17 @@ function intercambiarPosiciones(fila1, columna1, fila2, columa2) {
   intercambiarPoscionesDOM("pieza" + pieza1, "pieza" + pieza2);
 }
 
-function intercambiarPoscionesDOM(idPieza1, idPieza2){
-    var pieza1 = document.getElementById(idPieza1);
-    var pieza2 = document.getElementById(idPieza2);
+function intercambiarPoscionesDOM(idPieza1, idPieza2) {
+  var pieza1 = document.getElementById(idPieza1);
+  var pieza2 = document.getElementById(idPieza2);
 
-    //vamos a clonarlas
-    var padre = elementoPieza1.parentNode;
+  var padre = pieza1.parentNode;
 
-    //lo clono
-    var clonElemento1 = elementoPieza1.cloneNode(true);
-    var clonElemento2 = elementoPieza2.cloneNode(true);
+  var clon1 = pieza1.cloneNode(true);
+  var clon2 = pieza2.cloneNode(true);
 
-    //reemplazar a los padre con sus clones
-    padre.replaceChild(clonElemento1, elementoPieza2);
-    padre.replaceChild(clonElemento2, elementoPieza1);
+  padre.replaceChild(clon1, pieza2);
+  padre.replaceChild(clon2, pieza1);
 }
 
 //debo de actualizar los movimientos en el DOM
