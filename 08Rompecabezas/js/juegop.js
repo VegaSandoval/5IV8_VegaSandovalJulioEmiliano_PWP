@@ -71,12 +71,12 @@ function mostrarCartelGanador(){
 */
 
 function intercambiarPosicionesRompe(filaPos1, columnaPos1, filaPos2, columaPos2){
-    var pos1 = rompe[filaPos1, columnaPos1];
-    var pos2 = rompe[filaPos2, columaPos2];
+    var pos1 = rompe[filaPos1][columnaPos1];
+    var pos2 = rompe[filaPos2][columaPos2];
 
     //intercambio
-    rompe[filaPos1, columnaPos1] = pos2;
-    rompe[filaPos2, columaPos2] = pos1;
+    rompe[filaPos1][columnaPos1] = pos2;
+    rompe[filaPos2][columaPos2] = pos1;
 }
 
 //que se encargue de saber donde esta la pieza vacia
