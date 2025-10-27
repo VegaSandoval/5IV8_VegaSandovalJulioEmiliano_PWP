@@ -121,15 +121,13 @@ function moverEnDireccion(direccion) {
   }
 }
 
-function intercambiarPosiciones(fila1, columna1, fila2, columa2){
-    var pieza1 = rompe[fila1, columna1];
-    var pieza2 = rompe[fila2, columa2];
-
-    //intercambio ya debe de ser por parte de los frames y el html
-    intercambiarPosicionesRompe(fila1, columna1, fila2, columa2);
-    //para el html
-    intercambiarPoscionesDOM('pieza'+pieza1, 'pieza'+pieza2);
-    
+function intercambiarPosiciones(fila1, columna1, fila2, columa2) {
+  var pieza1 = rompe[fila1][columna1];
+  var pieza2 = rompe[fila2][columa2];
+  // actualiza estado lógico
+  intercambiarPosicionesRompe(fila1, columna1, fila2, columa2);
+  // actualiza DOM
+  intercambiarPoscionesDOM("pieza" + pieza1, "pieza" + pieza2);
 }
 
 function intercambiarPoscionesDOM(idPieza1, idPieza2){
