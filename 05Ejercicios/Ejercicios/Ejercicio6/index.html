@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ejercicio 6 – Edad</title>
+  <link rel="stylesheet" href="../../css/ejercicios.css"/>
+</head>
+<body>
+<header class="header-minimal">
+  <h1>Ejercicio 6 · Cálculo de edad</h1>
+  <div class="header-right"><p>Vega Sandoval Julio Emiliano</p></div>
+</header>
+
+<main>
+  <section class="form-card">
+    <h2>Fecha de nacimiento</h2>
+    <form id="form-e6" class="grid-2" novalidate>
+      <div><label for="fn">Selecciona tu fecha</label><input id="fn" type="date" required/></div>
+
+      <div class="actions" style="grid-column:1/-1">
+        <button type="button" class="btn btn-primary" id="calc">Calcular</button>
+        <button type="reset" class="btn btn-ghost">Borrar</button>
+      </div>
+      <div id="err" class="error" style="grid-column:1/-1"></div>
+      <div id="out" class="result" style="grid-column:1/-1; display:none"></div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 - Ejercicio6 de Julio Emiliano</p>
+  <button onclick="window.location.href='../../ejercicio1.html'">Volver al menú</button>
+</footer>
+
+<script src="./e6.js" defer></script>
+</body>
+</html>

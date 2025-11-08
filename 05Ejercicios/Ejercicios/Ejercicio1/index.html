@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ejercicio 1 – Inversión</title>
+  <link rel="stylesheet" href="../../css/ejercicios.css"/>
+</head>
+<body>
+<header class="header-minimal">
+  <h1>Ejercicio 1 · Interés 2% mensual</h1>
+  <div class="header-right"><p>Vega Sandoval Julio Emiliano</p></div>
+</header>
+
+<main>
+  <section class="form-card">
+    <h2>Cálculo de inversión (hasta 18 meses)</h2>
+    <form id="form-e1" class="grid-2" novalidate>
+      <div>
+        <label for="capital">Capital a invertir ($)</label>
+        <input id="capital" type="number" min="0" step="0.01" placeholder="Ej. 1500.00" required/>
+      </div>
+      <div>
+        <label for="meses">Meses</label>
+        <input id="meses" type="number" min="1" max="18" value="1" required/>
+      </div>
+      <div class="actions" style="grid-column:1/-1">
+        <button type="button" class="btn btn-primary" id="calc">Calcular</button>
+        <button type="reset" class="btn btn-ghost">Borrar</button>
+      </div>
+      <div id="err" class="error" style="grid-column:1/-1"></div>
+      <div id="out" class="result" style="grid-column:1/-1; display:none"></div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 - Ejercicio1 de Julio Emiliano</p>
+  <button onclick="window.location.href='../../ejercicio1.html'">Volver al menú</button>
+</footer>
+
+<script src="./e1.js" defer></script>
+</body>
+</html>

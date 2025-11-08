@@ -1,49 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú de Ejercicios JS</title>
+  <link rel="stylesheet" href="./css/estilos.css" />
 </head>
 <body>
-    <div class="container" >
-        <form method="post" name="formulario" action="">
-            <label for=""> Formulario para calculo de inversiones Banco Kawaii con un incremento del 8.05% anual</label>
-            <br>
-            <div class="container-table" >
-                <table class="table" >
-                    <tr>
-                        <td>
-                            Introduce la cantidad que deseas invertir por todo 1 año: 
-                        </td>
-                        <td>
-                            <input type="text" name="cantidad" id="cantidadi" onkeypress="return validarn(event)">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="button" value="Calcular Interes" name="enviar" onclick="interes()">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Su saldo total con el interes es de: 
-                        </td>
-                        <td>
-                            <input type="text" name="sueldoi" id="saldoi" readonly="readonly" class="input_text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="button" value="Borrar Datos" name="borrar" onclick="borrari()">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </form>
+
+
+  <header class="header-minimal">
+    <div class="header-left">
+      <h1>Menú de Ejercicios JS</h1>
     </div>
- <script src="./js/funcionese1.js" ></script>   
+    <div class="header-right">
+      <p>Vega Sandoval Julio Emiliano</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro intro--tight">
+      <h2>Selecciona un ejercicio</h2>
+      <p>Explora los 6 ejercicios de JavaScript. Cada tarjeta te lleva al ejercicio correspondiente.</p>
+    </section>
+
+
+    <section class="grid-ejercicios" aria-label="Listado de ejercicios">
+      <a class="exercise-card" href="./Ejercicios/Ejercicio1/index.html" aria-label="Ir al Ejercicio 1">
+        <div class="card-media" aria-hidden="true">Imágen</div>
+        <div class="card-footer">Ejercicio 1</div>
+      </a>
+
+      <a class="exercise-card" href="./Ejercicios/Ejercicio2/index.html" aria-label="Ir al Ejercicio 2">
+        <div class="card-media" aria-hidden="true">Imágen</div>
+        <div class="card-footer">Ejercicio 2</div>
+      </a>
+
+      <a class="exercise-card" href="./Ejercicios/Ejercicio3/index.html" aria-label="Ir al Ejercicio 3">
+        <div class="card-media" aria-hidden="true">Imágen</div>
+        <div class="card-footer">Ejercicio 3</div>
+      </a>
+
+      <a class="exercise-card" href="./Ejercicios/Ejercicio4/index.html" aria-label="Ir al Ejercicio 4">
+        <div class="card-media" aria-hidden="true">Imágen</div>
+        <div class="card-footer">Ejercicio 4</div>
+      </a>
+
+      <a class="exercise-card" href="./Ejercicios/Ejercicio5/index.html" aria-label="Ir al Ejercicio 5">
+        <div class="card-media" aria-hidden="true">Imágen</div>
+        <div class="card-footer">Ejercicio 5</div>
+      </a>
+
+      <a class="exercise-card" href="./Ejercicios/Ejercicio6/index.html" aria-label="Ir al Ejercicio 6">
+        <div class="card-media" aria-hidden="true">Imágen</div>
+        <div class="card-footer">Ejercicio 6</div>
+      </a>
+    </section>
+  </main>
+
+
+  <footer>
+    <p>© 2025 - Curriculum de Julio Emiliano</p>
+    <button onclick="window.location.href='../index.html'">Volver al inicio</button>
+  </footer>
 </body>
 </html>
