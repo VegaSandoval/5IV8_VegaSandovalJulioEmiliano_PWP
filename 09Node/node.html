@@ -1,11 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>09Node — Resumen de la práctica</title>
+  <link rel="stylesheet" href="./css/estilos.css"/>
 </head>
 <body>
-    
+
+  <!-- Header -->
+  <header class="header-minimal">
+    <h1>09Node — Servidor básico con Node.js</h1>
+    <div class="header-right"><p>Vega Sandoval Julio Emiliano</p></div>
+  </header>
+
+  <main>
+    <!-- Resumen -->
+    <section class="doc-card">
+      <p>
+        Esta práctica demuestra cómo levantar un servidor sencillo en <b>Node.js</b>,
+        gestionar dependencias con <b>NPM</b> y organizar un proyecto mínimo.
+        El resultado es la carpeta <code>09Node/</code> con código de servidor, utilidades,
+        un <code>.gitignore</code> adecuado y un <code>package.json</code> con dependencias.
+      </p>
+    </section>
+
+    <!-- Mapa de archivos -->
+    <section class="doc-card">
+      <h2 class="doc-title">Estructura obtenida</h2>
+<pre class="code">
+09Node/
+├─ node_modules/               (generado por npm install)
+├─ .gitignore                  (ignora dependencias, logs, tmp, etc.)
+├─ function.js                 (objeto con funciones: suma, resta)
+├─ index.js                    (servidor HTTP básico)
+├─ node.html                   (HTML de apoyo; no lo sirve el server actual)
+├─ package-lock.json           (árbol exacto de dependencias)
+└─ package.json                (nombre, scripts, dependencias)
+</pre>
+      <p class="note">En tus capturas, <code>package.json</code> incluye <b>express</b> y <b>bootstrap</b> (aparece “boostrap”).
+      Puedes corregir el nombre a <code>"bootstrap"</code> si decides usarlo más adelante.</p>
+    </section>
+
+    <!-- De cero al proyecto -->
+    <section class="doc-card">
+      <h2 class="doc-title">Cómo se llegó a este resultado (paso a paso)</h2>
+      <ol class="steps">
+        <li>
+          Crear carpeta y posicionarse:
+<pre class="code">mkdir 09Node
+cd 09Node</pre>
+        </li>
+        <li>
+          Inicializar NPM (crea <code>package.json</code>):
+<pre class="code">npm init -y</pre>
+        </li>
+        <li>
+          Crear y completar <code>.gitignore</code> para evitar subir <code>node_modules/</code>, variables, logs, etc.
+<pre class="code">node_modules/
+.env
+.env.*
+build/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+.DS_Store
+Thumbs.db
+.vscode/</pre>
+        </li>
+        <li>
+          Instalar dependencias (opcional para esta demo, pero registradas en tu proyecto):
+<pre class="code">npm install express bootstrap</pre>
+          <span class="note">Aunque se instaló Express, el servidor de la práctica usa el módulo nativo <code>http</code>.</span>
+        </li>
+        <li>
+          Crear el servidor en <code>index.js</code>:
+<pre class="code">
+// index.js
+var http = require('http');
+
+var servidor = http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+  res.write('&lt;h1&gt;Hola Mundo desde Node.js&lt;/h1&gt;');
+  res.write('&lt;h1&gt;A mimir&lt;/h1&gt;');
+  console.log('Hola, sí entró al servidor');
+  res.end();
+});
+
+servidor.listen(3000);
+console.log('Servidor ejecutándose en http://localhost:3000');
+</pre>
+        </li>
+        <li>
+          Código auxiliar en <code>function.js</code>:
+<pre class="code">
+// function.js
+var prueba = {
+  suma: function(a, b) {
+    var c = a + b;
+    console.log(c);
+  },
+  resta: function(a, b) {
+    var c = a - b;
+    console.log(c);
+  }
+}
+</pre>
+          <span class="note">Estas funciones imprimen en consola; si quieres usarlas en otros archivos, expórtalas con <code>module.exports</code>.</span>
+        </li>
+        <li>
+          Ejecutar el servidor:
+<pre class="code">node index.js</pre>
+          <p>Verás en consola: <code>Servidor ejecutándose en http://localhost:3000</code> y podrás abrir esa URL en el navegador.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Qué hace y cómo funciona -->
+    <section class="doc-card">
+      <h2 class="doc-title">Qué hace y cómo funciona</h2>
+      <ul class="bullets">
+        <li>El módulo nativo <code>http</code> crea un servidor que responde con HTML plano a cualquier ruta.</li>
+        <li>El encabezado <code>Content-Type: text/html; charset=utf-8</code> permite enviar texto con acentos.</li>
+        <li>La respuesta se arma con varias llamadas a <code>res.write()</code> y se finaliza con <code>res.end()</code>.</li>
+        <li>El servidor escucha en el puerto <b>3000</b>; si el puerto está ocupado, cámbialo (por ejemplo, 3001).</li>
+        <li><code>function.js</code> es una utilidad separada; actualmente no se importa en <code>index.js</code>.</li>
+      </ul>
+    </section>
+
+    <!-- Errores comunes y mejoras -->
+    <section class="doc-card">
+      <h2 class="doc-title">Errores comunes y mejoras sugeridas</h2>
+      <ul class="bullets">
+        <li><b>Puerto en uso:</b> cambia el <code>listen(3000)</code> o libera el puerto.</li>
+        <li><b>Faltan dependencias:</b> si borraste <code>node_modules/</code>, corre <code>npm install</code>.</li>
+        <li><b>Bootstrap mal escrito:</b> cambia <code>"boostrap"</code> por <code>"bootstrap"</code> en <code>package.json</code> y reinstala.</li>
+        <li><b>Mejorar arranque:</b> agrega en <code>package.json</code>:
+<pre class="code">"scripts": {
+  "start": "node index.js",
+  "dev": "npx nodemon index.js"
+}</pre>
+          Ejecuta con <code>npm run dev</code> para recarga en caliente.</li>
+        <li><b>Servir HTML real:</b> Puedes migrar a Express o leer un archivo con <code>fs.readFile</code> y enviarlo en la respuesta.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 - Node de Julio Emiliano</p>
+    <button onclick="window.location.href='../index.html'">Volver al inicio</button>
+  </footer>
 </body>
 </html>
