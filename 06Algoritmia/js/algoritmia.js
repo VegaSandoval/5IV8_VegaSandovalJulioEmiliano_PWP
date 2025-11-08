@@ -1,38 +1,44 @@
-function problema1(){
-    //tarea
-}
+// === Utilidades ===
+const $ = (s) => document.querySelector(s);
 
-function problema2(){
-    //este es mio
-    var p2_x1 = document.querySelector("#p2_x1").ariaValueMax;
-    var p2_x2 = document.querySelector("#p2_x2").ariaValueMax;
-    var p2_x3 = document.querySelector("#p2_x3").ariaValueMax;
-    var p2_x4 = document.querySelector("#p2_x4").ariaValueMax;
-    var p2_x5 = document.querySelector("#p2_x5").ariaValueMax;
+// === Problema 1: Invertir palabras ===
+$('#btn-p1').addEventListener('click', ()=>{
+  const txt = $('#p1-input').value.trim();
+  const out = $('#p1-output');
+  if(!txt){ out.textContent = 'Por favor ingresa un texto válido.'; return; }
+  const invertido = txt.split(/\s+/).reverse().join(' ');
+  out.textContent = `Resultado:\n${invertido}`;
+});
 
-    var p2_y1 = document.querySelector("#p2_y1").ariaValueMax;
-    var p2_y2 = document.querySelector("#p2_y2").ariaValueMax;
-    var p2_y3 = document.querySelector("#p2_y3").ariaValueMax;
-    var p2_y4 = document.querySelector("#p2_y4").ariaValueMax;
-    var p2_y5 = document.querySelector("#p2_y5").ariaValueMax;
+// === Problema 2: Producto escalar mínimo ===
+$('#btn-p2').addEventListener('click', ()=>{
+  const x=[], y=[];
+  for(let i=1;i<=5;i++){
+    const xi=parseFloat($('#x'+i).value);
+    const yi=parseFloat($('#y'+i).value);
+    if(isNaN(xi)||isNaN(yi)){ $('#p2-output').textContent='Completa todos los valores numéricos.'; return; }
+    x.push(xi); y.push(yi);
+  }
+  // Ordena X ascendente y Y descendente para minimizar producto
+  x.sort((a,b)=>a-b);
+  y.sort((a,b)=>b-a);
+  const productos = x.map((v,i)=>v*y[i]);
+  const suma = productos.reduce((a,b)=>a+b,0);
+  $('#p2-output').textContent = `Vectores ordenados:\nX: ${x.join(', ')}\nY: ${y.join(', ')}\n\nProducto escalar mínimo = ${suma}`;
+});
 
-    //creamos los vectores
-    var v1 = [p2_x1, p2_x2, p2_x3, p2_x4, p2_x5];
-    var v2 = [p2_y1, p2_y2, p2_y3, p2_y4, p2_y5];
+// === Problema 3: Palabra con más caracteres únicos ===
+$('#btn-p3').addEventListener('click', ()=>{
+  const val = $('#p3-input').value.trim();
+  const out = $('#p3-output');
+  if(!val){ out.textContent='Ingresa palabras separadas por coma, sin espacios.'; return; }
 
-    v1 = v1.sort(function(a, b){return b-a});
-    v2 = v2.sort(function(a, b){return b-a});
-
-    v2 = v2.reverse();
-
-    var p2_producto = 0;
-    for(var i=0; i<v1.length; i++){
-        p2_producto += v1[i] * v2[i];
-    }
-
-    document.querySelector("#p2_resultado").textContent = "#p2_resultado" + p2_producto;
-}
-
-function problema3(){
-    //tarea
-}
+  const palabras = val.split(',').map(p=>p.toUpperCase());
+  let maxWord='', maxCount=0;
+  palabras.forEach(p=>{
+    const set = new Set(p.replace(/[^A-Z]/g,'')); // solo letras A-Z
+    if(set.size>maxCount){ maxCount=set.size; maxWord=p; }
+  });
+  if(maxCount===0){ out.textContent='Ninguna palabra válida.'; return; }
+  out.textContent = `Palabra con más caracteres únicos: ${maxWord}\nCantidad: ${maxCount}`;
+});
