@@ -1,11 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Práctica – Condicionales y Utilidades</title>
+  <link rel="stylesheet" href="./css/estilos.css" />
 </head>
 <body>
-    
+
+  <header class="header-minimal">
+    <h1>07JSIntemedio</h1>
+    <div class="header-right"><p>Vega Sandoval Julio Emiliano</p></div>
+  </header>
+
+  <main>
+
+    <section class="problema-card">
+      <h2>1) Operación según comparación</h2>
+      <p>Lee dos números: si son iguales, <b>multiplícalos</b>; si el primero es mayor, <b>réstalos</b> (a−b); en otro caso, <b>súmalos</b> (a+b).</p>
+      <form class="grid-2" id="form-p1" novalidate>
+        <div>
+          <label for="p1-a">Número A</label>
+          <input id="p1-a" type="number" step="any" required />
+        </div>
+        <div>
+          <label for="p1-b">Número B</label>
+          <input id="p1-b" type="number" step="any" required />
+        </div>
+        <div class="actions" style="grid-column:1/-1">
+          <button type="button" class="btn btn-primary" id="btn-p1">Calcular</button>
+          <button type="reset" class="btn btn-ghost">Borrar</button>
+        </div>
+        <div id="p1-err" class="error" style="grid-column:1/-1"></div>
+        <div id="p1-out" class="result" style="grid-column:1/-1; display:none"></div>
+      </form>
+    </section>
+
+    <section class="problema-card">
+      <h2>2) Mayor de tres números</h2>
+      <p>Lee tres números diferentes e imprime el <b>mayor</b>. (Si hay igualdad, se notificará.)</p>
+      <form class="grid-2" id="form-p2" novalidate>
+        <div><label for="p2-a">A</label><input id="p2-a" type="number" step="any" required /></div>
+        <div><label for="p2-b">B</label><input id="p2-b" type="number" step="any" required /></div>
+        <div><label for="p2-c">C</label><input id="p2-c" type="number" step="any" required /></div>
+        <div class="actions" style="grid-column:1/-1">
+          <button type="button" class="btn btn-primary" id="btn-p2">Calcular</button>
+          <button type="reset" class="btn btn-ghost">Borrar</button>
+        </div>
+        <div id="p2-err" class="error" style="grid-column:1/-1"></div>
+        <div id="p2-out" class="result" style="grid-column:1/-1; display:none"></div>
+      </form>
+    </section>
+
+    <section class="problema-card">
+      <h2>3) Pago por horas extra</h2>
+      <p>
+        Si las horas trabajadas en la semana exceden de <b>40</b>, el resto son <b>extra</b>.<br>
+        Hasta 8 extra se pagan al <b>doble</b> y el resto al <b>triple</b>. Muestra el pago por horas extra y el total semanal.
+      </p>
+      <form class="grid-2" id="form-p3" novalidate>
+        <div><label for="p3-horas">Horas trabajadas (semana)</label><input id="p3-horas" type="number" min="0" step="1" required /></div>
+        <div><label for="p3-tarifa">Tarifa por hora ($)</label><input id="p3-tarifa" type="number" min="0" step="1" required /></div>
+        <div class="actions" style="grid-column:1/-1">
+          <button type="button" class="btn btn-primary" id="btn-p3">Calcular</button>
+          <button type="reset" class="btn btn-ghost">Borrar</button>
+        </div>
+        <div id="p3-err" class="error" style="grid-column:1/-1"></div>
+        <div id="p3-out" class="result" style="grid-column:1/-1; display:none"></div>
+      </form>
+    </section>
+
+    <section class="problema-card">
+      <h2>4) Utilidad anual por antigüedad</h2>
+      <p>
+        Utilidad según años en la empresa (sobre salario mensual):<br>
+        &lt;1 año: 5% · 1–2: 7% · 2–5: 10% · 5–10: 15% · &gt;10: 20%.
+      </p>
+      <form class="grid-2" id="form-p4" novalidate>
+        <div><label for="p4-sal">Salario mensual ($)</label><input id="p4-sal" type="number" min="0" step="1" required /></div>
+        <div><label for="p4-anios">Años en la empresa</label><input id="p4-anios" type="number" min="0" step="0.1" required /></div>
+        <div class="actions" style="grid-column:1/-1">
+          <button type="button" class="btn btn-primary" id="btn-p4">Calcular</button>
+          <button type="reset" class="btn btn-ghost">Borrar</button>
+        </div>
+        <div id="p4-err" class="error" style="grid-column:1/-1"></div>
+        <div id="p4-out" class="result" style="grid-column:1/-1; display:none"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - JSIntermedio de Julio Emiliano</p>
+    <button onclick="window.location.href='../index.html'">Volver al inicio</button>
+  </footer>
+
+  <script src="./js/funcionesintermedio.js" defer></script>
 </body>
 </html>
