@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stardew Valley – Búsqueda (API)</title>
+  <link rel="stylesheet" href="./css/stardew.css" />
+  <script defer src="./js/stardew.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Stardew Valley <span class="sub">API (wiki ES)</span></h1>
+  </header>
+
+  <main class="container">
+    <section class="search-box">
+      <form id="form">
+        <input id="q" type="search" placeholder="Busca cultivos, aldeanos, recetas…" aria-label="Búsqueda" />
+        <button type="submit">Buscar</button>
+      </form>
+
+      <div class="tips">
+        <span class="tip" data-q="Chirivía">Chirivía</span>
+        <span class="tip" data-q="Junimos">Junimos</span>
+        <span class="tip" data-q="Qi">Qi</span>
+        <span class="tip" data-q="Espada">Espada</span>
+        <span class="tip" data-q="Pez">Pez</span>
+        <span class="tip" data-q="Sombrero">Sombrero</span>
+      </div>
+    </section>
+
+    <section id="results" class="grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="foot">
+    <small>Fuente: <a href="https://es.stardewvalleywiki.com" target="_blank" rel="noopener">stardewvalleywiki (ES)</a> (MediaWiki API)</small>
+  </footer>
+</body>
+</html>

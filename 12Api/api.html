@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terraria – Búsqueda (API)</title>
+  <link rel="stylesheet" href="./css/terraria.css" />
+  <script defer src="./js/terraria.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Terraria <span class="sub">API (wiki.gg)</span></h1>
+  </header>
+
+  <main class="container">
+    <section class="search-box">
+      <form id="form">
+        <input id="q" type="search" placeholder="Busca ítems, NPCs, minerales…" aria-label="Búsqueda" />
+        <button type="submit">Buscar</button>
+      </form>
+
+      <div class="tips">
+        <span class="tip" data-q="Copper">Copper</span>
+        <span class="tip" data-q="Demonite">Demonite</span>
+        <span class="tip" data-q="Eye of Cthulhu">Eye of Cthulhu</span>
+        <span class="tip" data-q="Night's Edge">Night's Edge</span>
+      </div>
+    </section>
+
+    <section id="results" class="grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="foot">
+    <small>Fuente: <a href="https://terraria.wiki.gg" target="_blank" rel="noopener">terraria.wiki.gg</a> (MediaWiki API)</small>
+  </footer>
+</body>
+</html>S
