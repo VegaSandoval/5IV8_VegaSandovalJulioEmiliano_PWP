@@ -27,19 +27,17 @@
 
     <!-- Mapa de archivos -->
     <section class="doc-card">
-      <h2 class="doc-title">Estructura obtenida</h2>
-<pre class="code">
-09Node/
-├─ node_modules/               (generado por npm install)
-├─ .gitignore                  (ignora dependencias, logs, tmp, etc.)
-├─ function.js                 (objeto con funciones: suma, resta)
-├─ index.js                    (servidor HTTP básico)
-├─ node.html                   (HTML de apoyo; no lo sirve el server actual)
-├─ package-lock.json           (árbol exacto de dependencias)
-└─ package.json                (nombre, scripts, dependencias)
-</pre>
-      <p class="note">En tus capturas, <code>package.json</code> incluye <b>express</b> y <b>bootstrap</b> (aparece “boostrap”).
-      Puedes corregir el nombre a <code>"bootstrap"</code> si decides usarlo más adelante.</p>
+        <h2 class="doc-title">Estructura obtenida</h2>
+        <pre class="code">
+        09Node/
+        ├─ node_modules/               (generado por npm install)
+        ├─ .gitignore                  (ignora dependencias, logs, tmp, etc.)
+        ├─ function.js                 (objeto con funciones: suma, resta)
+        ├─ index.js                    (servidor HTTP básico)
+        ├─ node.html                   (HTML de apoyo; no lo sirve el server actual)
+        ├─ package-lock.json           (árbol exacto de dependencias)
+        └─ package.json                (nombre, scripts, dependencias)
+        </pre>
     </section>
 
     <!-- De cero al proyecto -->
@@ -71,7 +69,7 @@ Thumbs.db
 .vscode/</pre>
         </li>
         <li>
-          Instalar dependencias (opcional para esta demo, pero registradas en tu proyecto):
+          Instalar dependencias (opcional para esta demo, pero registradas en el proyecto):
 <pre class="code">npm install express bootstrap</pre>
           <span class="note">Aunque se instaló Express, el servidor de la práctica usa el módulo nativo <code>http</code>.</span>
         </li>
@@ -108,7 +106,7 @@ var prueba = {
   }
 }
 </pre>
-          <span class="note">Estas funciones imprimen en consola; si quieres usarlas en otros archivos, expórtalas con <code>module.exports</code>.</span>
+          <span class="note">Estas funciones imprimen en consola; si se quieren usar en otros archivos, deben exportarse con <code>module.exports</code>.</span>
         </li>
         <li>
           Ejecutar el servidor:
