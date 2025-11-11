@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica: Memoize Function</title>
+  <link rel="stylesheet" href="./css/estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Práctica 13</h1>
+    <p class="subtitle">Programación Web y Pruebas · Vega Sandoval Julio Emiliano</p>
+  </header>
+
+  <main class="container">
+    <!-- Panel de resultado o validación -->
+    <section class="panel panel-visual">
+      <h2 class="panel-title">Resultado de Validación</h2>
+      <div class="image-box">
+        <!-- Aquí colocas la imagen de tu resultado -->
+        <img src="./img/evidencia.png" alt="Validación de práctica" class="validation-img">
+      </div>
+    </section>
+
+    <!-- Panel de código -->
+    <section class="panel panel-code">
+      <h2 class="panel-title">Código de la Solución</h2>
+      <pre class="code-box"><code>
+function memoize(fn) {
+  const cache = new Map();
+
+  return function (...args) {
+    let current = cache;
+    for (const arg of args) {
+      if (!current.has(arg)) current.set(arg, new Map());
+      current = current.get(arg);
+    }
+
+    if (current.has("value")) return current.get("value");
+
+    const result = fn(...args);
+    current.set("value", result);
+    return result;
+  };
+}
+      </code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - P13 de Julio Emiliano</p>
+    <button onclick="window.location.href='../index.html'">Volver al inicio</button>
+  </footer>
+
+</body>
+</html>
