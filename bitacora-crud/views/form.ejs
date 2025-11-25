@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      <%= bitacora && bitacora.id ? "Editar" : "Nueva" %> bitácora
+    </title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <h1 class="site-title">
+          <%= bitacora && bitacora.id ? "Editar entrada" : "Nueva entrada" %>
+        </h1>
+        <nav class="nav">
+          <a href="/" class="nav-link">Listado</a>
+          <a href="/bitacoras/nueva" class="nav-link nav-link-active"
+            >Formulario</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <% if (errors && errors.length) { %>
+        <div class="alert alert-error">
+          <p><strong>Revisa los siguientes errores:</strong></p>
+          <ul>
+            <% errors.forEach(function(e) { %>
+            <li><%= e %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <% } %>
+
+        <form
+          action="<%= bitacora && bitacora.id ? '/bitacoras/editar/' + bitacora.id : '/bitacoras' %>"
+          method="POST"
+          class="form-grid"
+        >
+          <div class="field">
+            <label for="id_equipo">ID de Equipo/Activo</label>
+            <input
+              type="text"
+              id="id_equipo"
+              name="id_equipo"
+              required
+              maxlength="50"
+              value="<%= bitacora ? bitacora.id_equipo || '' : '' %>"
+            />
+          </div>
+
+          <div class="field">
+            <label for="fecha_programada">Fecha programada</label>
+            <input
+              type="datetime-local"
+              id="fecha_programada"
+              name="fecha_programada"
+              required
+              value="<%= bitacora ? (bitacora.fecha_programada_input || '') : '' %>"
+            />
+          </div>
+
+          <div class="field">
+            <label for="fecha_ejecucion">Fecha de ejecución</label>
+            <input
+              type="datetime-local"
+              id="fecha_ejecucion"
+              name="fecha_ejecucion"
+              required
+              value="<%= bitacora ? (bitacora.fecha_ejecucion_input || '') : '' %>"
+            />
+          </div>
+
+          <div class="field">
+            <label for="tarea_realizada">Tarea realizada</label>
+            <textarea
+              id="tarea_realizada"
+              name="tarea_realizada"
+              rows="3"
+              required
+            ><%= bitacora ? (bitacora.tarea_realizada || "") : "" %></textarea>
+          </div>
+
+          <div class="field">
+            <label for="tecnico_responsable">Técnico responsable</label>
+            <input
+              type="text"
+              id="tecnico_responsable"
+              name="tecnico_responsable"
+              required
+              maxlength="100"
+              value="<%= bitacora ? bitacora.tecnico_responsable || '' : '' %>"
+            />
+          </div>
+
+          <div class="field">
+            <label for="horas_ciclos">Horas / ciclos del equipo</label>
+            <input
+              type="number"
+              id="horas_ciclos"
+              name="horas_ciclos"
+              min="0"
+              step="1"
+              value="<%= bitacora ? (bitacora.horas_ciclos || '') : '' %>"
+            />
+            <small>Opcional, debe ser un número entero.</small>
+          </div>
+
+          <div class="field">
+            <label for="estado_despues">Estado después del servicio</label>
+            <select id="estado_despues" name="estado_despues" required>
+              <% const estado = bitacora ? bitacora.estado_despues : ""; %>
+              <option value="">-- Selecciona una opción --</option>
+              <option
+                value="Óptimo"
+                <%= estado === "Óptimo" ? "selected" : "" %>
+              >
+                Óptimo
+              </option>
+              <option
+                value="Requiere seguimiento"
+                <%= estado === "Requiere seguimiento" ? "selected" : "" %>
+              >
+                Requiere seguimiento
+              </option>
+              <option
+                value="Pendiente de pieza"
+                <%= estado === "Pendiente de pieza" ? "selected" : "" %>
+              >
+                Pendiente de pieza
+              </option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <%= bitacora && bitacora.id ? "Guardar cambios" : "Crear entrada" %>
+            </button>
+            <a href="/" class="btn btn-outline">Cancelar</a>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>5IV8 · Programación · Bitácora CRUD</p>
+      </div>
+    </footer>
+  </body>
+</html>

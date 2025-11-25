@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bitácora de Mantenimiento - CRUD</title>
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Fuentes de tu guía de estilos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <h1 class="site-title">Bitácora de mantenimiento</h1>
+        <nav class="nav">
+          <a href="/" class="nav-link nav-link-active">Listado</a>
+          <a href="/bitacoras/nueva" class="nav-link">Nueva entrada</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="card-header">
+          <h2 class="card-title">Registros de bitácora</h2>
+          <a href="/bitacoras/nueva" class="btn btn-primary">+ Nueva entrada</a>
+        </div>
+
+        <% if (bitacoras.length === 0) { %>
+        <p>No hay registros todavía. Crea el primero.</p>
+        <% } else { %>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>ID Equipo</th>
+                <th>Fecha Programada</th>
+                <th>Fecha Ejecución</th>
+                <th>Tarea</th>
+                <th>Técnico</th>
+                <th>Horas/Ciclos</th>
+                <th>Estado Después</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% bitacoras.forEach(function(b) { %>
+              <tr>
+                <td><%= b.id %></td>
+                <td><%= b.id_equipo %></td>
+                <td><%= b.fecha_programada %></td>
+                <td><%= b.fecha_ejecucion %></td>
+                <td><%= b.tarea_realizada %></td>
+                <td><%= b.tecnico_responsable %></td>
+                <td><%= b.horas_ciclos || "-" %></td>
+                <td><%= b.estado_despues %></td>
+                <td class="acciones">
+                  <a
+                    href="/bitacoras/editar/<%= b.id %>"
+                    class="btn btn-outline btn-small"
+                    >Editar</a
+                  >
+                  <form
+                    action="/bitacoras/eliminar/<%= b.id %>"
+                    method="POST"
+                    class="inline-form"
+                    onsubmit="return confirm('¿Seguro que deseas eliminar este registro?');"
+                  >
+                    <button type="submit" class="btn btn-ghost btn-small">
+                      Eliminar
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+        <% } %>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>5IV8 · Programación · Bitácora CRUD</p>
+      </div>
+    </footer>
+  </body>
+</html>
